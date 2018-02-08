@@ -1,4 +1,4 @@
-#JWT - Simple JWT library for Go
+# JWT - Simple JWT library for Go
 
 This library lets you get up and running with JWTs in no time.
 Quickly encode a payload into a JWT, verify a JWT signiature, and Decode a payload from a JWT.
