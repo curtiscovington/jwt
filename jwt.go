@@ -21,8 +21,6 @@ func Verify(token string, secret []byte) bool {
 	sigHash := hash.Sum(nil)
 
 	sig := base64.StdEncoding.EncodeToString(sigHash)
-	fmt.Println(sig)
-	fmt.Println(parts[2])
 	if strings.Compare(sig, parts[2]) != 0 {
 		return false
 	}
@@ -60,7 +58,7 @@ func Encode(payload interface{}, secret []byte) (string, error) {
 }
 
 // Decode a payload from a jwt, assumes Verify has already been called
-func Decode(t string, payload interface{}, secret []byte) error {
+func Decode(t string, payload interface{}) error {
 	p, err := base64.StdEncoding.DecodeString(strings.Split(t, ".")[1])
 	if err != nil {
 		return err
